@@ -1,0 +1,38 @@
+/* CONFIG PAGE */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   font-size: 62.5%;
+
+   /* styles */
+   --f-family: "Inter", sans-serif;
+   --bg-color-modal: #6D67D0;
+   --txt-color: #ffff;
+   --fancy-txt: #C2BFF4;
+   --fancy-modal-txt-one: #DAD8F7;
+   --fancy-modal-txt-two: #E7E6FB;
+   --good-time-color: #87EBCD;
+   --default-border: 1rem;
+}
+
+body {
+   font-size: 1.6rem;
+   font-family: var(--f-family);
+   background: url('./images/bg-body.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: top center;
+   height: 100vh;
+}
+
+.modal, button {
+   border-radius: var(--default-border);
+}
+
+.modal {
+   background-color: var(--bg-color-modal);
+}

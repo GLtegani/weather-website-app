@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <!-- PRECONNECTS -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <!-- META -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Weather App</title>
+   <!-- STYLES -->
+   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- ALL CONTENT -->
+   <div id="weather-app">
+      <header class="modal select local">
+         <h1 class="main-title">
+            Weather app
+         </h1>
+
+         <form id="states-country">
+            <label for="states-container">
+               Select State
+            </label>
+            <select id="states-container">
+               <option value="state">
+                  
+               </option>
+            </select>
+
+            <button>
+               Confirm State
+            </button>
+         </form>
+      </header>
+      <main id="modal-container">
+         <!-- CURRENT WEATHER MODAL -->
+         <div class="modal current-weather">
+            <span class="local"></span>
+         </div>
+      </main>
+   </div>
+</body>
+</html>
