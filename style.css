@@ -11,6 +11,8 @@
    /* styles */
    --f-family: "Inter", sans-serif;
    --bg-color-modal: #6D67D0;
+   --bg-transparent-modal: #dad8f756;
+   --outline-colors:  #352af8;
    --txt-color: #ffff;
    --fancy-txt: #C2BFF4;
    --fancy-modal-txt-one: #DAD8F7;
@@ -21,12 +23,37 @@
 
 body {
    font-size: 1.6rem;
-   font-family: var(--f-family);
    background: url('./images/bg-body.png');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: top center;
    height: 100vh;
+}
+
+body * {
+   font-family: var(--f-family);
+}
+
+button {
+   border: none;
+   cursor: pointer;
+   padding: 0.5rem;
+   background-color: var(--bg-transparent-modal);
+   transition: 0.2s;
+}
+
+input, button {
+   outline-color: var(--outline-colors);
+}
+
+button:hover {
+   background: var(--fancy-modal-txt-one);
+   color: var(--bg-color-modal);
+   border-color: var(--bg-transparent-modal);
+}
+
+button, label {
+   font-size: clamp(1.2rem, 1.2rem + 1vw, 2rem);
 }
 
 .modal, button {
@@ -35,4 +62,138 @@ body {
 
 .modal {
    background-color: var(--bg-color-modal);
+}
+
+h1, p, button, label{
+   color: var(--fancy-modal-txt-two);
+}
+
+svg {
+   color: var(--txt-color);
+}
+
+/* HEADER SELECT STATE FOR WEATHER */
+header {
+   padding: 1rem;
+   background-color: var(--bg-color-modal);
+   margin: 1rem auto 3rem;
+   width: clamp(20rem, 20rem + 18vw, 48rem);
+   border-radius: var(--default-border);
+}
+
+header .main-title {
+   font-size: clamp(2.4rem, 2.4rem + 1vw, 3.2rem);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 1.5rem;
+}
+
+header #states-country {
+   gap: clamp(1rem, 1rem + 3vw, 5rem);
+}
+
+header #states-country .states-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   margin-bottom: 1.5rem;
+}
+
+header #states-country input {
+   border-radius: var(--default-border);
+   width: 15.5rem;
+   padding: 0.5rem 1rem;
+   border: none;
+}
+
+header button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+}
+
+/* CURRENT WEATHER MODAL */
+#modal-container .decorative-icon {
+   position: absolute;
+   z-index: 1;
+   font-size: 7rem;
+   top: -9%;
+   left: -4%;
+}
+#modal-container .modal.current-weather-container {
+   background-image: url(./images/bg-modal.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: top center;
+   width: clamp(20rem, 20rem + 18vw, 48rem);
+   margin: 0 auto;
+   position: relative;
+   padding: 1rem;
+}
+
+.current-weather-container .local {
+   font-size: clamp(1rem, 1rem + 1vw, 1.4rem);
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   gap: 0.5rem;
+   font-weight: bold;
+}
+
+.local, .min {
+   color: var(--fancy-txt);
+}
+
+.main, .max {
+   color: var(--txt-color);
+}
+
+.current-weather-container .local svg {
+   width: 1.2rem;
+}
+
+.current-weather {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: 5rem;
+}
+
+.current-weather .main {
+   font-size: 5rem;
+   margin-bottom: 0.5rem;
+}
+
+/* OTHER INFOS CURRENT WEATHER */
+.other-infos {
+   margin-top: 10rem;
+   display: flex;
+   gap: 0.8rem;
+   justify-content: center;
+}
+.card {
+   background-color: #6c67d0b4;
+   padding: 1rem 0;
+   width: 7rem;
+   display: flex;;
+   justify-content: space-around;
+   align-items: center;
+   border-radius: var(--default-border);
+   font-size: 1rem;
+}
+
+.card svg.icon-info {
+   font-size: 1.5rem;
+}
+
+.card .type-data {
+   color: var(--fancy-modal-txt-two);
+}
+
+.card .data {
+   color: var(--fancy-modal-txt-one);
 }
