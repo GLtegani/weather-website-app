@@ -151,6 +151,20 @@ header button {
    color: var(--txt-color);
 }
 
+.main, .max, .min, .data {
+   font-weight: bold;
+}
+
+.main {
+   display: flex;
+   margin-left: 1.8rem;
+}
+
+.main .measure-temperature {
+   font-weight: normal;
+   font-size: 2rem;
+}
+
 .current-weather-container .local svg {
    width: 1.2rem;
 }
@@ -196,4 +210,8 @@ header button {
 
 .card .data {
    color: var(--fancy-modal-txt-one);
+}
+
+.data {
+   font-size: 1.2rem;
 }
