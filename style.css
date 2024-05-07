@@ -9,9 +9,10 @@
    font-size: 62.5%;
 
    /* styles */
+   --modal-widths: clamp(20rem, 20rem + 18vw, 48rem);
    --f-family: "Inter", sans-serif;
    --bg-color-modal: #6D67D0;
-   --bg-transparent-modal: #dad8f756;
+   --bg-transparent-btn: #dad8f756;
    --outline-colors:  #352af8;
    --txt-color: #ffff;
    --fancy-txt: #C2BFF4;
@@ -38,7 +39,7 @@ button {
    border: none;
    cursor: pointer;
    padding: 0.5rem;
-   background-color: var(--bg-transparent-modal);
+   background-color: var(--bg-transparent-btn);
    transition: 0.2s;
 }
 
@@ -49,7 +50,6 @@ input, button {
 button:hover {
    background: var(--fancy-modal-txt-one);
    color: var(--bg-color-modal);
-   border-color: var(--bg-transparent-modal);
 }
 
 button, label {
@@ -60,24 +60,24 @@ button, label {
    border-radius: var(--default-border);
 }
 
-.modal {
+.modal, header {
    background-color: var(--bg-color-modal);
+   width: var(--modal-widths);
+   margin: 3rem auto;
+   padding: 1rem;
 }
 
 h1, p, button, label{
    color: var(--fancy-modal-txt-two);
 }
 
-svg {
+svg, .main, .max {
    color: var(--txt-color);
 }
 
 /* HEADER SELECT STATE FOR WEATHER */
 header {
-   padding: 1rem;
-   background-color: var(--bg-color-modal);
-   margin: 1rem auto 3rem;
-   width: clamp(20rem, 20rem + 18vw, 48rem);
+   margin-top: 1rem;
    border-radius: var(--default-border);
 }
 
@@ -104,7 +104,7 @@ header #states-country .states-container {
 header #states-country input {
    border-radius: var(--default-border);
    width: 15.5rem;
-   padding: 0.5rem 1rem;
+   padding: 0.5rem 0.8rem;
    border: none;
 }
 
@@ -128,10 +128,8 @@ header button {
    background-size: cover;
    background-repeat: no-repeat;
    background-position: top center;
-   width: clamp(20rem, 20rem + 18vw, 48rem);
    margin: 0 auto;
    position: relative;
-   padding: 1rem;
 }
 
 .current-weather-container .local {
@@ -143,12 +141,8 @@ header button {
    font-weight: bold;
 }
 
-.local, .min {
+.local, .min, .measure-temperature  {
    color: var(--fancy-txt);
-}
-
-.main, .max {
-   color: var(--txt-color);
 }
 
 .main, .max, .min, .data {
@@ -192,8 +186,8 @@ header button {
 .card {
    background-color: #6c67d0b4;
    padding: 1rem 0;
-   width: 7rem;
-   display: flex;;
+   width: 7.5rem;
+   display: flex;
    justify-content: space-around;
    align-items: center;
    border-radius: var(--default-border);
@@ -201,7 +195,7 @@ header button {
 }
 
 .card svg.icon-info {
-   font-size: 1.5rem;
+   font-size: 2rem;
 }
 
 .card .type-data {
@@ -215,3 +209,5 @@ header button {
 .data {
    font-size: 1.2rem;
 }
+
+/* OTHER WEATHER DAYS */
