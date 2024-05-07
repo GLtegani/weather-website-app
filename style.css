@@ -9,7 +9,7 @@
    font-size: 62.5%;
 
    /* styles */
-   --modal-widths: clamp(20rem, 20rem + 18vw, 48rem);
+   --modal-widths: clamp(20rem, 20rem + 20vw, 48rem);
    --f-family: "Inter", sans-serif;
    --bg-color-modal: #6D67D0;
    --bg-transparent-btn: #dad8f756;
@@ -28,7 +28,7 @@ body {
    background-size: cover;
    background-repeat: no-repeat;
    background-position: top center;
-   height: 100vh;
+   height: 100%;
 }
 
 body * {
@@ -67,7 +67,7 @@ button, label {
    padding: 1rem;
 }
 
-h1, p, button, label{
+h1, p, button, label, .type-data{
    color: var(--fancy-modal-txt-two);
 }
 
@@ -97,14 +97,15 @@ header #states-country .states-container {
    display: flex;
    justify-content: center;
    align-items: center;
+   flex-direction: column;
    gap: 1rem;
    margin-bottom: 1.5rem;
 }
 
 header #states-country input {
    border-radius: var(--default-border);
-   width: 15.5rem;
-   padding: 0.5rem 0.8rem;
+   width: 16rem;
+   padding: 1rem;
    border: none;
 }
 
@@ -186,7 +187,7 @@ header button {
 .card {
    background-color: #6c67d0b4;
    padding: 1rem 0;
-   width: 7.5rem;
+   width: clamp(7.5rem, 7.5rem + 8vw, 15rem);
    display: flex;
    justify-content: space-around;
    align-items: center;
@@ -195,19 +196,69 @@ header button {
 }
 
 .card svg.icon-info {
-   font-size: 2rem;
+   font-size: clamp(2rem, 2rem + 1vw, 6rem);
 }
 
-.card .type-data {
-   color: var(--fancy-modal-txt-two);
-}
-
-.card .data {
+.card .data, .day {
    color: var(--fancy-modal-txt-one);
 }
 
+.card .type-data {
+   font-size: clamp(1rem, 1rem + 1vw, 1.1rem);
+}
+
 .data {
-   font-size: 1.2rem;
+   font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
 }
 
 /* OTHER WEATHER DAYS */
+.other-weather-days .weathers-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 5rem;
+   padding: 2rem;
+}
+
+.weathers-container .day-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1.5rem;
+}
+
+.day-container .day {
+   font-size: 1.4rem;
+}
+
+.day-container .icon-weather-for-day {
+   font-size: clamp(4.5rem, 4.5rem + 2vw, 6.4rem);
+}
+
+/* FINAL CREDITS */
+.end-page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.end-page ul {
+   display: flex;
+   list-style: none;
+   align-items: center;
+   justify-content: center;
+   gap: 2rem;
+   margin-top: 1rem;
+}
+
+.end-page ul svg {
+   font-size: 3rem;
+   transition: 0.2s;
+}
+
+.end-page ul svg:hover {
+   transform: scale(1.06);
+}
