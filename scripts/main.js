@@ -1,11 +1,18 @@
 // IMPORTS
-import { captureUserInput } from './captureUserInput.js';
+import { conectAPI, getWeatherData } from './getWeatherData.js';
+import { displayWeatherInfo } from './displayWeather.js';
 // DATA
 const UserInput = {
    inputWeather: document.querySelector('input'),
    sendBtn: document.querySelector('button.send-btn'),
    
    localWeather: document.querySelector('.local-weather'),
+   mainTemperature: document.querySelector('.main'),
+   maxTemperature: document.querySelector('.max'),
+   minTemperature: document.querySelector('.min'),
+   windSpeed: document.querySelector('.to-wind'),
+   humidity: document.querySelector('.to-damp'),
+   rainForecast: document.querySelector('.to-rain'),
 
 };
 
@@ -13,9 +20,12 @@ const UserInput = {
 // FUNCTION
 const sendInfos = event => {
    event.preventDefault();
-   captureUserInput(UserInput.inputWeather.value);
+   conectAPI(UserInput.inputWeather.value);
 };
 
 
 // EVENTS
 UserInput.sendBtn.addEventListener('click', sendInfos);
+
+// EXPORTS
+export { UserInput };

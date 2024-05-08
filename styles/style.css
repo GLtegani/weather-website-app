@@ -12,6 +12,7 @@
    --modal-widths: clamp(20rem, 20rem + 20vw, 48rem);
    --f-family: "Inter", sans-serif;
    --bg-color-modal: #6D67D0;
+   --bg-error: red;
    --bg-transparent-btn: #dad8f756;
    --outline-colors:  #352af8;
    --txt-color: #ffff;
@@ -33,6 +34,10 @@ body {
 
 body * {
    font-family: var(--f-family);
+}
+
+.hide {
+   display: none;
 }
 
 button {
@@ -78,6 +83,13 @@ h1, p, button, label, .type-data{
 
 svg, .main, .max {
    color: var(--txt-color);
+}
+
+/* ERROR MESSAGE */
+.error-container {
+   padding: 1rem;
+   background-color: var(--bg-error);
+   text-align: center;
 }
 
 /* HEADER SELECT STATE FOR WEATHER */
