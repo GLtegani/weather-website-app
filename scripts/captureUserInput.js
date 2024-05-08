@@ -1,26 +1,23 @@
 // IMPORTS
-import { APIData } from './apiData.js';
-
-// DATA
-const UserInput = {
-   inputWeather: document.querySelector('input'),
-   sendBtn: document.querySelector('button.send-btn'),
-   
-   localWeather: document.querySelector('.local-weather'),
-
-};
-
+import { apiKey } from "./apiData.js";
 
 // FUNCTION
-const sendInfos = event => {
-   event.preventDefault();
+const captureUserInput = async (local) => {
+   try {
+      const endpoint = `https://api.openweathermap.org/data/2.5/weather?q={${local}}&appid={${apiKey}}`
+      const response = await fetch(endpoint);
 
-   console.log(UserInput.inputWeather.value);
+      if(!response.ok) {
+         throw new Error('Unable to connect to endpoint.');
+      };
+
+      const localData = response.json();
+      console.log(localData);
+
+   } catch (error) {
+      console.error(error);
+   };
 };
 
-
-// EVENTS
-UserInput.sendBtn.addEventListener('click', sendInfos);
-
-
 // EXPORTS
+export { captureUserInput };
