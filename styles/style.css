@@ -40,6 +40,14 @@ body * {
    display: none;
 }
 
+.hide-error {
+   transform: translateY(-100%);
+}
+
+.show-error {
+   transform: translateY(0);
+}
+
 button {
    border: none;
    cursor: pointer;
@@ -90,6 +98,7 @@ svg, .main, .max {
    padding: 1rem;
    background-color: var(--bg-error);
    text-align: center;
+   transition: 0.5s;
 }
 
 /* HEADER SELECT STATE FOR WEATHER */

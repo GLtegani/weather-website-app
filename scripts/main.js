@@ -13,7 +13,8 @@ const UserInput = {
    windSpeed: document.querySelector('.to-wind'),
    humidity: document.querySelector('.to-damp'),
    rainForecast: document.querySelector('.to-rain'),
-
+   errorContainer: document.querySelector('.error-container'),
+   errorMsg: document.querySelector('.error-msg'),
 };
 
 

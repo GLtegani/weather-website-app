@@ -1,3 +1,7 @@
+// IMPORTS
+import { UserInput } from "./main.js";
+
+// FUNCTIONS
 const capitalizeWords = (sentence) => {
      let phrase = sentence.toLowerCase();
      let words = phrase.split(' ');
@@ -18,5 +22,22 @@ const metersPersecondToKilometersPerHour = (velocity) => {
      return Math.round(velocity);
 };
 
+const displayError = (errorMsg) => {
+     UserInput.errorContainer.classList.remove('hide-error');
+     UserInput.errorContainer.classList.add('show-error');
+     UserInput.errorMsg.textContent = errorMsg;
+};
+
+const hideError = () => {
+     UserInput.errorContainer.classList.remove('show-error');
+     UserInput.errorContainer.classList.add('hide-error');
+};
+
 // EXPORTS
-export { capitalizeWords, fahrenheitToCelsius, metersPersecondToKilometersPerHour };
+export { 
+     capitalizeWords, 
+     fahrenheitToCelsius, 
+     metersPersecondToKilometersPerHour, 
+     displayError,
+     hideError,
+};
