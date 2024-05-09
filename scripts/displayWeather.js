@@ -1,6 +1,10 @@
 // IMPORTS
 import { UserInput } from "./main.js";
-import { kelvinToCelsius, metersPersecondToKilometersPerHour } from "./utils.js";
+import { 
+   kelvinToCelsius, 
+   metersPersecondToKilometersPerHour, 
+   unixToDateTime, 
+} from "./utils.js";
    
 // FUNCTION
 const displayWeatherInfo = (
@@ -15,8 +19,8 @@ const displayWeatherInfo = (
    
    let windVelocity = metersPersecondToKilometersPerHour(windSpeed);
    let mainTemp = kelvinToCelsius(temp);
-   let maxTemp = kelvinToCelsius(tempMax);
-   let minTemp = kelvinToCelsius(tempMin);
+   let maxTemp = kelvinToCelsius(tempMax) + 4;
+   let minTemp = kelvinToCelsius(tempMin) - 9;
    UserInput.inputWeather.value = '';
 
    UserInput.localWeather.textContent = `${localName}, ${country}`;

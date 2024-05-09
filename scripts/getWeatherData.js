@@ -1,18 +1,23 @@
 // IMPORTS
 import { displayWeatherInfo } from "./displayWeather.js";
 
-const getWeatherData = async (data) => {
+const getWeatherData = async (currentWeatherData, forecastWeatherData) => {
 
-   console.log(data);
+   console.log(currentWeatherData, forecastWeatherData);
    const {
-            name: local, 
-            main: {temp, temp_min, temp_max, humidity}, 
-            sys: {country},
-            wind: { speed },
-         } = await data;
+      name: city, 
+      main: {temp, temp_min, temp_max, humidity}, 
+      sys: {country},
+      wind: { speed },
+   } = await currentWeatherData;
+
+   const { 
+      dt: dateTime,
+      main: {temp_max: forecastTempMax, temp_min: forecastTempMin},
+   } = await forecastWeatherData;
 
    displayWeatherInfo(
-      local, 
+      city, 
       temp, 
       temp_min, 
       temp_max, 

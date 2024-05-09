@@ -38,6 +38,12 @@ const verifyIfStrHasNumber = (str) => {
      return regex.test(str);
 };
 
+const unixToDateTime = (unixTime) => {
+     const day = new Date(unixTime * 1000);
+     let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+     return daysOfWeek[day.getDay()];
+};
+
 // EXPORTS
 export { 
      capitalizeWords, 
@@ -45,5 +51,6 @@ export {
      metersPersecondToKilometersPerHour, 
      displayError,
      hideError,
-     verifyIfStrHasNumber
+     verifyIfStrHasNumber,
+     unixToDateTime,
 };
