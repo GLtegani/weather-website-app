@@ -172,6 +172,10 @@ header button {
    color: var(--fancy-txt);
 }
 
+.main-container {
+   display: flex;
+}
+
 .main, .max, .min, .data {
    font-weight: bold;
 }

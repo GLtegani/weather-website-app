@@ -12,9 +12,9 @@ const capitalizeWords = (sentence) => {
    return words.join(' ');
 };
 
-const fahrenheitToCelsius = (temperature) => {
+const kelvinToCelsius = (temperature) => {
      temperature = temperature - 273.15;
-     return temperature.toFixed(1);
+     return Math.round(temperature);
 };
 
 const metersPersecondToKilometersPerHour = (velocity) => {
@@ -33,11 +33,17 @@ const hideError = () => {
      UserInput.errorContainer.classList.add('hide-error');
 };
 
+const verifyIfStrHasNumber = (str) => {
+     let regex = /\d/;
+     return regex.test(str);
+};
+
 // EXPORTS
 export { 
      capitalizeWords, 
-     fahrenheitToCelsius, 
+     kelvinToCelsius, 
      metersPersecondToKilometersPerHour, 
      displayError,
      hideError,
+     verifyIfStrHasNumber
 };

@@ -1,8 +1,6 @@
 // IMPORTS
-import { apiKey } from "./apiData.js";
-import { conectAPI } from "./getWeatherData.js";
 import { UserInput } from "./main.js";
-import { fahrenheitToCelsius, metersPersecondToKilometersPerHour } from "./utils.js";
+import { kelvinToCelsius, metersPersecondToKilometersPerHour } from "./utils.js";
    
 // FUNCTION
 const displayWeatherInfo = (
@@ -16,13 +14,13 @@ const displayWeatherInfo = (
 ) => {
    
    let windVelocity = metersPersecondToKilometersPerHour(windSpeed);
-   let mainTemp = fahrenheitToCelsius(temp);
-   let maxTemp = fahrenheitToCelsius(tempMax);
-   let minTemp = fahrenheitToCelsius(tempMin);
+   let mainTemp = kelvinToCelsius(temp);
+   let maxTemp = kelvinToCelsius(tempMax);
+   let minTemp = kelvinToCelsius(tempMin);
    UserInput.inputWeather.value = '';
 
    UserInput.localWeather.textContent = `${localName}, ${country}`;
-   UserInput.mainTemperature.textContent = `${mainTemp}°C`;
+   UserInput.mainTemperature.textContent = `${mainTemp}`;
    UserInput.maxTemperature.textContent = `${maxTemp}°`;
    UserInput.minTemperature.textContent = `${minTemp}°`;
    UserInput.humidity.textContent = `${humidity}%`;

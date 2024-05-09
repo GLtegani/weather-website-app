@@ -1,5 +1,5 @@
 // IMPORTS
-import { conectAPI, getWeatherData } from './getWeatherData.js';
+import { conectAPI } from './apiConect.js';
 import { displayWeatherInfo } from './displayWeather.js';
 // DATA
 const UserInput = {
