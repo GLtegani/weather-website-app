@@ -38,6 +38,16 @@ const verifyIfStrHasNumber = (str) => {
      return regex.test(str);
 };
 
+const takeListDays = (list) => {
+     const slicedList = list.slice(7);
+
+     for(let i = 0; i < slicedList.length; i++) {
+          return slicedList.filter(object => {
+               return object.dt_txt.includes('09:00:00')
+          });
+     };
+};
+
 const unixToDateTime = (unixTime) => {
      const day = new Date(unixTime * 1000);
      let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -53,4 +63,5 @@ export {
      hideError,
      verifyIfStrHasNumber,
      unixToDateTime,
+     takeListDays,
 };

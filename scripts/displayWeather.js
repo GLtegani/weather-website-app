@@ -1,11 +1,6 @@
 // IMPORTS
 import { UserInput } from "./main.js";
-import { 
-   kelvinToCelsius, 
-   metersPersecondToKilometersPerHour, 
-   unixToDateTime, 
-} from "./utils.js";
-   
+
 // FUNCTION
 const displayWeatherInfo = (
    localName, 
@@ -16,20 +11,50 @@ const displayWeatherInfo = (
    country, 
    windSpeed,
 ) => {
-   
-   let windVelocity = metersPersecondToKilometersPerHour(windSpeed);
-   let mainTemp = kelvinToCelsius(temp);
-   let maxTemp = kelvinToCelsius(tempMax) + 4;
-   let minTemp = kelvinToCelsius(tempMin) - 9;
    UserInput.inputWeather.value = '';
 
    UserInput.localWeather.textContent = `${localName}, ${country}`;
-   UserInput.mainTemperature.textContent = `${mainTemp}`;
-   UserInput.maxTemperature.textContent = `${maxTemp}°`;
-   UserInput.minTemperature.textContent = `${minTemp}°`;
+   UserInput.mainTemperature.textContent = `${temp}`;
+   UserInput.maxTemperature.textContent = `${tempMax}°`;
+   UserInput.minTemperature.textContent = `${tempMin}°`;
    UserInput.humidity.textContent = `${humidity}%`;
-   UserInput.windSpeed.textContent = `${windVelocity}km/h`;
+   UserInput.windSpeed.textContent = `${windSpeed}km/h`;
+};
+
+const displayForecastWeather = (
+   dayInputs,
+   iconInputs,
+   maxInputs,
+   minInputs,
+   days,
+   iconDays,
+   correctMaxTempDays,
+   correctMinTempDays,
+) => {
+   dayInputs.forEach((element, index) => {
+      if(index < days.length) {
+         element.textContent = days[index];
+      };
+   });
+
+   iconInputs.forEach((img, index) => {
+      if(index < iconDays.length) {
+         img.src = `https://openweathermap.org/img/wn/${iconDays[index]}@2x.png`;
+      };
+   });
+
+   maxInputs.forEach((element, index) => {
+      if(index < correctMaxTempDays.length) {
+         element.textContent = `${correctMaxTempDays[index]}°`;
+      };
+   });
+
+   minInputs.forEach((element, index) => {
+      if(index < correctMinTempDays.length) {
+         element.textContent = `${correctMinTempDays[index]}°`;
+      };
+   });
 };
 
 // EXPORTS
-export { displayWeatherInfo };
+export { displayWeatherInfo, displayForecastWeather };

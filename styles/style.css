@@ -48,6 +48,10 @@ body * {
    transform: translateY(0);
 }
 
+img {
+   width: 10rem;
+}
+
 button {
    border: none;
    cursor: pointer;
