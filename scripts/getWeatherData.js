@@ -18,14 +18,37 @@ const getWeatherData = async (currentWeatherData, forecastWeatherData) => {
       wind: { speed },
    } = await currentWeatherData;
 
+   const { 
+      list: listOfDays,
+   } = await forecastWeatherData;
+
+   manipulateData(
+      city,
+      temp,
+      temp_min,
+      temp_max,
+      humidity,
+      country,
+      speed,
+      listOfDays,
+   );   
+};
+
+const manipulateData = (
+   city,
+   temp,
+   temp_min,
+   temp_max,
+   humidity,
+   country,
+   speed,
+   listOfDays,
+) => {
+
    const windVelocity = metersPersecondToKilometersPerHour(speed);
    const mainTemp = kelvinToCelsius(temp);
    const minTemp = kelvinToCelsius(temp_min) - 9;
    const maxTemp = kelvinToCelsius(temp_max) + 4;
-
-   const { 
-      list: listOfDays,
-   } = await forecastWeatherData;
 
    const daysOfWeek = takeListDays(listOfDays);
 
