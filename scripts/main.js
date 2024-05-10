@@ -1,12 +1,12 @@
 // IMPORTS
 import { conectAPI } from './apiConect.js';
-import { displayWeatherInfo } from './displayWeather.js';
 
 // DATA
 const UserInput = {
    inputWeather: document.querySelector('input'),
    sendBtn: document.querySelector('button.send-btn'),
    
+   // FIRST CARD
    localWeather: document.querySelector('.local-weather'),
    mainTemperature: document.querySelector('.main'),
    maxTemperature: document.querySelector('.max'),
@@ -17,6 +17,7 @@ const UserInput = {
    errorContainer: document.querySelector('.error-container'),
    errorMsg: document.querySelector('.error-msg'),
 
+   // SECOND CARD
    dayOne: document.querySelector('.one-day'),
    oneIcon: document.querySelector('.one-icon'),
    oneMax: document.querySelector('.one-max'),
@@ -36,7 +37,6 @@ const UserInput = {
    fourIcon: document.querySelector('.four-icon'),
    fourMax: document.querySelector('.four-max'),
    fourMin: document.querySelector('.four-min'),
-
 };
 
 // FUNCTION
