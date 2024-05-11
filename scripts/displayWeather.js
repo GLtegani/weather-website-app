@@ -1,5 +1,6 @@
 // IMPORTS
 import { UserInput } from "./main.js";
+import { hideRainCard, displayRainCard } from "./utils.js";
 
 // FUNCTION
 const displayWeatherInfo = (
@@ -10,6 +11,7 @@ const displayWeatherInfo = (
    humidity, 
    country, 
    windSpeed,
+   rainMM,
 ) => {
    UserInput.inputWeather.value = '';
 
@@ -19,6 +21,7 @@ const displayWeatherInfo = (
    UserInput.minTemperature.textContent = `${tempMin}°`;
    UserInput.humidity.textContent = `${humidity}%`;
    UserInput.windSpeed.textContent = `${windSpeed}km/h`;
+   rainMM == undefined ? hideRainCard() : displayRainCard(rainMM);
 };
 
 const displayForecastWeather = (

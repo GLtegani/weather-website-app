@@ -14,7 +14,7 @@ const capitalizeWords = (sentence) => {
 
 const kelvinToCelsius = (temperature) => {
      temperature = temperature - 273.15;
-     return Math.round(temperature);
+     return temperature;
 };
 
 const metersPersecondToKilometersPerHour = (velocity) => {
@@ -54,6 +54,17 @@ const unixToDateTime = (unixTime) => {
      return daysOfWeek[day.getDay()];
 };
 
+const displayRainCard = (rainVolume) => {
+     UserInput.rainCard.classList.remove('hide');
+     UserInput.rainCard.classList.add('card');
+     UserInput.rain.textContent = `${rainVolume}mm`;
+};
+
+const hideRainCard = () => {
+     UserInput.rainCard.classList.remove('card');
+     UserInput.rainCard.classList.add('hide');
+};
+
 // EXPORTS
 export { 
      capitalizeWords, 
@@ -64,4 +75,6 @@ export {
      verifyIfStrHasNumber,
      unixToDateTime,
      takeListDays,
+     displayRainCard,
+     hideRainCard,
 };

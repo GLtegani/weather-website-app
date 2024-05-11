@@ -4,7 +4,6 @@ import { displayError,
   hideError, 
   capitalizeWords, 
   verifyIfStrHasNumber,
-  unixToDateTime,
 } from "./utils.js";
 import { apiKey } from "./apiData.js";
 import { UserInput } from "./main.js";
