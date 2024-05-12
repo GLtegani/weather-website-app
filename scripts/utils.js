@@ -43,7 +43,7 @@ const takeListDays = (list) => {
 
      for(let i = 0; i < slicedList.length; i++) {
           return slicedList.filter(object => {
-               return object.dt_txt.includes('09:00:00')
+               return object.dt_txt.includes('00:00:00')
           });
      };
 };

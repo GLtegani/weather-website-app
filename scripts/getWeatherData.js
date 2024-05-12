@@ -49,7 +49,7 @@ const manipulateData = (
    const windVelocity = metersPersecondToKilometersPerHour(speed);
    const mainTemp = Math.round(kelvinToCelsius(temp));
    const minTemp = Math.floor(kelvinToCelsius(temp_min)) - 3;
-   const maxTemp = Math.ceil(kelvinToCelsius(temp_max)) + 3;
+   const maxTemp = Math.ceil(kelvinToCelsius(temp_max)) + 4;
 
    const daysOfWeek = takeListDays(listOfDays);
    const unixTime = [];
@@ -101,7 +101,7 @@ const manipulateData = (
    });
 
    maxTempDays.forEach(maxTemp => {
-      correctMaxTempDays.push(Math.ceil(kelvinToCelsius(maxTemp)) + 3);
+      correctMaxTempDays.push(Math.ceil(kelvinToCelsius(maxTemp)) + 4);
    });
 
    minTempDays.forEach(minTemp => {
