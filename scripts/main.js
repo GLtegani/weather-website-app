@@ -1,10 +1,12 @@
 // IMPORTS
-import { conectAPI } from './apiConect.js';
+import { connectAPI } from './apiConnect.js';
 
 // DATA
 const UserInput = {
    inputWeather: document.querySelector('input'),
    sendBtn: document.querySelector('button.send-btn'),
+   containerInfos: document.querySelector('#modal-container'),
+   body: document .querySelector('body'),
    
    // FIRST CARD
    localWeather: document.querySelector('.local-weather'),
@@ -43,7 +45,7 @@ const UserInput = {
 // FUNCTION
 const sendInfos = event => {
    event.preventDefault();
-   conectAPI(UserInput.inputWeather.value);
+   connectAPI(UserInput.inputWeather.value);
 };
 
 // EVENTS

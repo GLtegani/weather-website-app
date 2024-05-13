@@ -2,7 +2,7 @@
 import { displayWeatherInfo, displayForecastWeather } from "./displayWeather.js";
 import { 
    kelvinToCelsius, 
-   metersPersecondToKilometersPerHour, 
+   metersPerSecondToKilometersPerHour, 
    unixToDateTime, 
    takeListDays,
 } from "./utils.js";
@@ -46,7 +46,7 @@ const manipulateData = (
    listOfDays,
    volumeRain,
 ) => {
-   const windVelocity = metersPersecondToKilometersPerHour(speed);
+   const windVelocity = metersPerSecondToKilometersPerHour(speed);
    const mainTemp = Math.round(kelvinToCelsius(temp));
    const minTemp = Math.floor(kelvinToCelsius(temp_min)) - 3;
    const maxTemp = Math.ceil(kelvinToCelsius(temp_max)) + 4;

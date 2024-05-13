@@ -17,7 +17,7 @@ const kelvinToCelsius = (temperature) => {
      return temperature;
 };
 
-const metersPersecondToKilometersPerHour = (velocity) => {
+const metersPerSecondToKilometersPerHour = (velocity) => {
      velocity = velocity * 3.6;
      return Math.round(velocity);
 };
@@ -69,7 +69,7 @@ const hideRainCard = () => {
 export { 
      capitalizeWords, 
      kelvinToCelsius, 
-     metersPersecondToKilometersPerHour, 
+     metersPerSecondToKilometersPerHour, 
      displayError,
      hideError,
      verifyIfStrHasNumber,

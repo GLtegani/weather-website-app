@@ -8,7 +8,7 @@ import { displayError,
 import { apiKey } from "./apiData.js";
 import { UserInput } from "./main.js";
 
-const conectAPI = async (city) => {
+const connectAPI = async (city) => {
   try {
     const stringHasNumber = verifyIfStrHasNumber(city);
     
@@ -42,4 +42,4 @@ const conectAPI = async (city) => {
 };
 
 // EXPORTS
-export { conectAPI };
+export { connectAPI };

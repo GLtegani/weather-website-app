@@ -14,7 +14,8 @@ const displayWeatherInfo = (
    rainMM,
 ) => {
    UserInput.inputWeather.value = '';
-
+   UserInput.body.style.height = '100%';
+   UserInput.containerInfos.classList.remove('hide');
    UserInput.localWeather.textContent = `${localName}, ${country}`;
    UserInput.mainTemperature.textContent = `${temp}`;
    UserInput.maxTemperature.textContent = `${tempMax}°`;
